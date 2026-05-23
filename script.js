@@ -4,12 +4,21 @@ let tableroLogico = [];
 
 // P5-7: Función para reiniciar/iniciar
 function reiniciarJuego() {
-    tamaño = parseInt(document.getElementById('dificultad').value);
+    const selector = document.getElementById('dificultad');
+    tamaño = parseInt(selector.value);
+    
+    // Ajustar minas según dificultad
+    if (tamaño === 9) minas = 10;
+    else if (tamaño === 16) minas = 40;
+    else if (tamaño === 25) minas = 99; // Dificultad difícil
+
     const contenedor = document.getElementById('tablero');
     contenedor.innerHTML = '';
-    contenedor.style.gridTemplateColumns = `repeat(${tamaño}, 40px)`;
+    // Ajustamos el estilo para que quepan las 25 columnas
+    contenedor.style.gridTemplateColumns = `repeat(${tamaño}, 30px)`; 
     
     crearTablero();
+}
 }
 
 function crearTablero() {
