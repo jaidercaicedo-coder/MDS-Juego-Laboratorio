@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscaminas - Práctica MDS</title>
+    <style>
+        #tablero { display: grid; gap: 5px; margin-top: 20px; }
+        .celda { width: 40px; height: 40px; border: 1px solid #ccc; display: flex; 
+                 align-items: center; justify-content: center; background: #eee; cursor: pointer; }
+        .revelada { background: #fff; }
+    </style>
+</head>
+<body>
+    <h1>Buscaminas (Laboratorio MDS)</h1>
+    
+    <select id="dificultad">
+        <option value="9">Fácil (9x9)</option>
+        <option value="16">Medio (16x16)</option>
+    </select>
+
+    <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+
+    <div id="tablero"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
